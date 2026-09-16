@@ -37,7 +37,7 @@ local CYCLE = 72
 for _, part in ipairs{"head", "tail"} do
   local layers = gs.beam[part].layers
   check_sheet(layers[1], part)
-  check(layers[1].filename:find("RainbowLasers"), part .. ": visible layer not repointed to the mod")
+  check(layers[1].filename:find("__" .. MOD_ROOT .. "__", 1, true), part .. ": visible layer not repointed to the mod")
   local light = layers[2]
   check(light.draw_as_light == true, part .. ": layer 2 is not the light layer")
   check(light.filename:find("__base__") ~= nil, part .. " light: should keep the vanilla sheet")
@@ -71,7 +71,7 @@ local function mentions_mod(t, seen)
   if seen[t] then return false end
   seen[t] = true
   for k, v in pairs(t) do
-    if type(v) == "string" and v:find("RainbowLasers") then return true end
+    if type(v) == "string" and v:find(MOD_ROOT, 1, true) then return true end
     if type(v) == "table" and mentions_mod(v, seen) then return true end
   end
   return false

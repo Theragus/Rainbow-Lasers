@@ -1,5 +1,6 @@
 -- Edge cases another mod could create before data-updates runs.
-local MOD = (os.getenv("MOD_ROOT") or "RainbowLasers") .. "/data-updates.lua"
+MOD_ROOT = os.getenv("MOD_ROOT") or "RainbowLasers-2-1"
+local MOD = MOD_ROOT .. "/data-updates.lua"
 local fails = 0
 local function case(name, build, assertion)
   data = { raw = { beam = {} } }
@@ -30,7 +31,7 @@ case("light layer listed first",
   function(b) b["laser-beam"] = { graphics_set = { beam = { head = { layers = { layer(true), layer(false) } } } } } end,
   function(b)
     local l = b["laser-beam"].graphics_set.beam.head.layers
-    assert(l[2].filename:find("RainbowLasers"), "visible layer (index 2) was not repointed")
+    assert(l[2].filename:find(MOD_ROOT, 1, true), "visible layer (index 2) was not repointed")
     assert(l[1].filename:find("__base__"), "light layer (index 1) must keep its sheet")
     assert(l[1].repeat_count == 9, "light layer not stretched")
   end)
@@ -48,7 +49,7 @@ case("multiple body variations",
       { layers = { layer(false), layer(true) } }, { layers = { layer(false), layer(true) } } } } } } end,
   function(b)
     for i, v in ipairs(b["laser-beam"].graphics_set.beam.body) do
-      assert(v.layers[1].filename:find("RainbowLasers"), "body variation " .. i .. " not converted")
+      assert(v.layers[1].filename:find(MOD_ROOT, 1, true), "body variation " .. i .. " not converted")
     end
   end)
 
@@ -59,7 +60,7 @@ case("sheet previously replaced using stripes",
   function(b)
     local l = b["laser-beam"].graphics_set.beam.head.layers[1]
     assert(l.stripes == nil, "stripes not cleared - filename would be ignored")
-    assert(l.filename:find("RainbowLasers"), "filename not set")
+    assert(l.filename:find(MOD_ROOT, 1, true), "filename not set")
   end)
 
 case("unlayered (single animation) beam part",
@@ -68,7 +69,7 @@ case("unlayered (single animation) beam part",
 
 case("laser-beam-no-sound added by another mod",
   function(b) b["laser-beam-no-sound"] = { graphics_set = { ground = { body = layer(true) } } } end,
-  function(b) assert(b["laser-beam-no-sound"].graphics_set.ground.body.filename:find("RainbowLasers"),
+  function(b) assert(b["laser-beam-no-sound"].graphics_set.ground.body.filename:find(MOD_ROOT, 1, true),
     "no-sound variant not converted") end)
 
 print(("\n%d edge-case failures"):format(fails))

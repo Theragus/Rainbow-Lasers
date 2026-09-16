@@ -14,7 +14,7 @@ echo "==> base version: $(python3 -c 'import json;print(json.load(open("'"$DATA_
 
 # Record the real pixel size of every shipped sheet, so the checks compare the
 # prototype's frame grid against the actual images.
-for f in RainbowLasers/graphics/*.png; do
+for f in RainbowLasers-2-1/graphics/*.png; do
   python3 - "$f" <<'PY'
 import struct, sys, os
 d = open(sys.argv[1], 'rb').read(33)
@@ -24,8 +24,8 @@ PY
 done > tests/png-dims.txt
 
 echo "==> syntax"
-luac5.4 -p RainbowLasers/data-updates.lua && echo "  OK data-updates.lua"
-python3 -m json.tool RainbowLasers/info.json > /dev/null && echo "  OK info.json"
+luac5.4 -p RainbowLasers-2-1/data-updates.lua && echo "  OK data-updates.lua"
+python3 -m json.tool RainbowLasers-2-1/info.json > /dev/null && echo "  OK info.json"
 
 echo "==> against real base prototypes"
 lua5.4 tests/verify.lua

@@ -12,7 +12,7 @@ local RGB_HUE_STEPS = RGB_FRAME_COUNT / RGB_LINE_LENGTH -- rows, i.e. hues
 local ANIMATION_SPEED = 0.5
 local TINT = nil -- e.g. {0.5, 0.5, 0.5} to dim the beams; nil keeps the sheets as-is
 
-local GRAPHICS = "__RainbowLasers__/graphics/"
+local GRAPHICS = "__RainbowLasers-2-1__/graphics/"
 
 -- Beams whose graphics we recolour. "laser-beam" is the vanilla one used by laser
 -- turrets, personal laser defense and destroyer robots; the no-sound variant only

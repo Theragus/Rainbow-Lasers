@@ -2,7 +2,7 @@
 -- https://github.com/wube/factorio-data (fetched by tests/run.sh).
 BASE_BEAMS = os.getenv("FACTORIO_DATA") or "tests/factorio-data"
 BASE_BEAMS = BASE_BEAMS .. "/base/prototypes/entity/beams.lua"
-MOD_ROOT = os.getenv("MOD_ROOT") or "RainbowLasers"
+MOD_ROOT = os.getenv("MOD_ROOT") or "RainbowLasers-2-1"
 
 util = setmetatable({ by_pixel = function(x, y) return {x/32, y/32} end,
                       by_pixel_hr = function(x, y) return {x/64, y/64} end,

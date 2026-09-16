@@ -3,6 +3,9 @@ Version: 1.1.0
 Date: 2026-09-16
   Changes:
     - Updated for Factorio 2.1. The mod no longer loads in Factorio 2.0.
+    - Reuploaded as "RainbowLasers-2-1" because the original "RainbowLasers" entry
+      is marked for 2.0 only. Marked incompatible with the original so the two
+      cannot be enabled at once.
   Bugfixes:
     - The beam graphics are now located by their light flag instead of by a fixed
       layer index, so the mod no longer recolours the wrong layer when another mod
@@ -18,5 +21,5 @@ Date: 2026-09-16
 Version: 1.0.0
 Date: 2025-05-30
   Features:
-    - Initial release for Factorio 2.0. RGB laser beams for laser turrets and
-      personal laser defense.
+    - Initial release for Factorio 2.0 by Honza2268. RGB laser beams for laser
+      turrets and personal laser defense.

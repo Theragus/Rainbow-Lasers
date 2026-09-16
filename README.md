@@ -8,6 +8,10 @@ This repository holds a **Factorio 2.1 port** of
 which was published for 2.0 and never updated. The graphics are the original
 author's, unchanged.
 
+It ships as `RainbowLasers-2-1` rather than `RainbowLasers`, because the original
+name belongs to the author's 2.0-only portal entry. The two are marked mutually
+incompatible, so only one can be enabled at a time.
+
 ## Why a port was needed
 
 Factorio matches `factorio_version` in `info.json` against one major version
@@ -39,11 +43,12 @@ colours cycle, and `TINT` to dim the beams.
 Grab a zip from the releases, or build one:
 
 ```bash
-./build.sh          # -> build/RainbowLasers_<version>.zip
+./build.sh          # -> build/RainbowLasers-2-1_<version>.zip
 ```
 
-Drop it in your Factorio `mods` folder. For development you can instead symlink
-or copy the `RainbowLasers/` folder there directly.
+Drop the zip in your Factorio `mods` folder — its filename already follows the
+`{name}_{version}` pattern the game and the mod portal require. For development
+you can instead symlink or copy the `RainbowLasers-2-1/` folder there directly.
 
 ## Tests
 
@@ -62,6 +67,9 @@ Requires `lua5.4`, `python3` and `git`.
 
 ## Credits and licence
 
-Original mod and all graphics by **Honza2268**, MIT licensed. This port keeps
-that licence and the original mod name, so it is a drop-in replacement. It is
-**not** published on the mod portal — that entry belongs to the original author.
+Original mod and all graphics by **Honza2268**, MIT licensed — which permits
+redistribution as long as the copyright notice is kept, and it is kept in
+`LICENSE`. `info.json` still credits Honza2268 as the author.
+
+The original 2.0 entry on the mod portal remains the author's; this is a separate
+entry under a separate name, not a replacement for it.
