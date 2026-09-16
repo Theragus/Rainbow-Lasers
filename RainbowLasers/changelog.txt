@@ -1,0 +1,22 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 2026-09-16
+  Changes:
+    - Updated for Factorio 2.1. The mod no longer loads in Factorio 2.0.
+  Bugfixes:
+    - The beam graphics are now located by their light flag instead of by a fixed
+      layer index, so the mod no longer recolours the wrong layer when another mod
+      adds beam layers.
+    - Mods that replace the laser beam sheets with a multi-file or striped sheet no
+      longer leave the RGB sheet unused.
+    - Loading no longer fails when another mod removes the laser beam prototype or
+      its graphics.
+  Minor Features:
+    - Every body variation of the beam is recoloured, not just the first one.
+    - "laser-beam-no-sound" is recoloured as well when another mod adds it.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 2025-05-30
+  Features:
+    - Initial release for Factorio 2.0. RGB laser beams for laser turrets and
+      personal laser defense.

@@ -1,0 +1,7 @@
+# Packaged mod archives
+*.zip
+build/
+
+# Test fixtures and generated test input
+tests/factorio-data
+tests/png-dims.txt
