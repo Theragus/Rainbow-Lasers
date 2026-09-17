@@ -1,0 +1,14 @@
+{
+  "name": "RainbowLasers-2-1",
+  "version": "1.1.0",
+  "title": "Rainbow Lasers 2.1",
+  "description": "Makes your laser beams RGB!\nWorks on laser turrets and personal laser defenses.\n\nA Factorio 2.1 update of Rainbow Lasers by Honza2268, reuploaded under a separate name because the original mod is only marked for 2.0. All graphics are the original author's.",
+  "author": "Honza2268",
+  "contact": "https://github.com/Theragus/Rainbow-Lasers",
+  "homepage": "https://github.com/Theragus/Rainbow-Lasers",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "base >= 2.1.0",
+    "! RainbowLasers"
+  ]
+}
